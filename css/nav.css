@@ -1,0 +1,173 @@
+aside.menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    max-width: 320px;
+    width: 100%;
+    background: #191819;
+    padding: 5px;
+    transition: 300ms;
+    overflow-y: scroll;
+    z-index: 999;
+} aside.menu.active {
+    right: 0;
+}
+
+@keyframes loading {
+    0% {
+        width: 15%;
+    } 50% {
+        width: 90%;
+    } 100% {
+        width: 15%;
+    }
+}
+
+.search-container {
+    width: 100%;
+    position: relative;
+    background: #252525;
+    border-radius: 20px;
+} .search-container.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    height: 2px;
+    background: #c58af9;
+    animation: loading 0.5s infinite ease-in-out;
+} input.search {
+    width: 90%;
+    padding: 10px 15px 10px 12px;
+    border: none;
+    background: transparent;
+    outline: none;
+} .close-btn {
+    padding: 2.5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: #000;
+    color: rgb(255 255 255 / 90%);
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1%;
+    border-radius: 50%;
+}
+
+.results {
+    margin: 0.5rem 0;
+    max-height: 220px;
+    min-height: 220px;
+    overflow: scroll;
+    color: #f9f9f9;
+    margin-top: -2px;
+} .results li {
+    margin: 5px 0;
+    padding: 10px 5px;
+    text-transform: capitalize;
+    transition: 200ms;
+} .results li:hover,
+.results li:active,
+.results li a:visited:hover {
+    background: #000;
+    color: #c58af9;
+} .results li a:visited {
+    color: #c58af9;
+} #stats {
+    margin-top: 13px;
+    margin-left: 8px;
+    color: #ddd;
+}
+
+.blog-area{
+    border-top: 3px solid #444;
+} .blog-card {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    padding: 5px;
+    transition: 200ms;
+} .blog-card .img {
+    width: 75px;
+    height: 60px;
+} .img img {
+    object-fit: cover;
+    border-radius: 10px;
+} .content {
+    margin-left: 10px;
+} .content h2 {
+    font-size: 1rem;
+    color: #fdfdff;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    text-transform: capitalize;
+} .content span {
+    color: #afafaf;
+    font-size: 0.8rem;
+} .blog-card:hover {
+    background: #000;
+}
+
+header.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #222;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+    padding: 10px 15px;
+    z-index: 99;
+} .logo {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+} .menu-btn {
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 9%;
+    left: 0;
+    background: #222;
+    z-index: 2;
+} nav li {
+    position: relative;
+    padding: 8px 10px;
+} nav li:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background: #444;
+    height: 100%;
+    width: 1px;
+} nav li:last-child::after {
+    background: transparent;
+} nav li.active {
+    background: #444;
+}
+
+@media (max-width: 450px) {
+    nav {
+        display: none;
+    }
+}
